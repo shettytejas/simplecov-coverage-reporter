@@ -1,0 +1,46 @@
+{
+  "name": "simplecov-reporter",
+  "version": "1.0.0",
+  "description": "Simplecov Reporter",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "nyc --reporter=html --check-coverage --lines 85 --per-file mocha --recursive --timeout=10000 --exit --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml",
+    "all": "npm run lint && npm run prepare && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shettytejas/simplecov-reporter.git"
+  },
+  "keywords": [
+    "actions",
+    "javaScript",
+    "ruby",
+    "simplecov",
+    "code-coverage"
+  ],
+  "author": "Tejas Shetty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shettytejas/simplecov-reporter/issues"
+  },
+  "homepage": "https://github.com/shettytejas/simplecov-reporter",
+  "dependencies": {
+    "@actions/core": "*",
+    "@actions/github": "*",
+    "@aki77/actions-replace-comment": "*",
+    "markdown-table": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^8.40.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.4"
+  }
+}

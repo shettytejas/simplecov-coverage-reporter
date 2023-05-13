@@ -1,0 +1,25 @@
+name: 'SimpleCov Reporter'
+description: "Reports SimpleCov results in the Pull Request comments."
+author: shettytejas
+branding:
+  icon: flag
+  color: white
+inputs:
+  title:
+    description: "Title for PR Comment"
+    default: "SimpleCov Report 🎉"
+    required: false
+  working-directory:
+    description: "Working Directory to find result-path in"
+    default: "."
+    required: false
+  result-path:
+    description: "Coverage (JSON) Path"
+    default: "coverage/coverage.json"
+    required: false
+  token:
+    description: "Github token"
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
