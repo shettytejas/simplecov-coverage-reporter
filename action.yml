@@ -1,4 +1,4 @@
-name: 'SimpleCov Reporter'
+name: 'SimpleCov Coverage Reporter'
 description: "Reports SimpleCov results in the Pull Request comments."
 author: shettytejas
 branding:
