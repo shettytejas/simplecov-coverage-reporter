@@ -55,6 +55,7 @@ jobs:
       - name: Rspec
         run: bundle exec rspec
       - name: Simplecov Report
+        if: success() || failure() # Recommended to forcefully comment on the PR even if RSpec returns a non-zero status code.
         uses: shettytejas/simplecov-reporter@v1
         with:
           # More options as given above.
