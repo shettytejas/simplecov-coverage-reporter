@@ -73,3 +73,7 @@ jobs:
 1. Checkout the code and make a PR against `master` branch.
 2. Make sure to add test cases (with new .json files) for the changes added.
 3. Make sure to reference it in the `unit-test.yml` workflow.
+
+## Special Thanks
+
+This action has been heavily inspired by `pi-chan/simplecov-report-group-action`, so a huge shoutout to it's creator 😄
