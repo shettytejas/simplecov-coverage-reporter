@@ -1,13 +1,13 @@
 name: "unit-tests"
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           title: Coverage Report for Simple Mode
