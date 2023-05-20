@@ -60,3 +60,16 @@ jobs:
           # More options as given above.
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+## Future Scope (v2 support)
+
+- Option to enforce minimum coverages (i.e failing jobs based on coverage status).
+- Options for users to give custom icons for success and failures?
+- Branch Metrics (This looks tough)
+- ... (more?)
+
+## Development
+
+1. Checkout the code and make a PR against `master` branch.
+2. Make sure to add test cases (with new .json files) for the changes added.
+3. Make sure to reference it in the `unit-test.yml` workflow.
