@@ -1,0 +1,40 @@
+name: "unit-tests"
+on:
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          title: Coverage Report for Simple Mode
+          result-path: examples/simple-mode.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          title: Coverage Report for Advanced mode with groups and errors
+          result-path: examples/am-with-groups-and-errors.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          title: Coverage Report for Advanced mode with less than minimum coverage
+          result-path: examples/am-with-groups-less-than-minimum.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          title: Coverage Report for Advanced mode without minimum config for file
+          result-path: examples/am-with-groups-with-minimum-config-without-file.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          title: Coverage Report for Advanced mode without errors
+          result-path: examples/am-with-groups-without-errors.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          title: Coverage Report for Advanced mode without total minimum config
+          result-path: examples/am-with-groups-without-minimum-config.json
+          token: ${{ secrets.GITHUB_TOKEN }}
